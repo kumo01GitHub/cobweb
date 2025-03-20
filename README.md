@@ -6,3 +6,4 @@ TODO:
 - doc
 - dockerfile
 - image version, variable
+- volume
