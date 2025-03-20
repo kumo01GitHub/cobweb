@@ -1,4 +1,8 @@
 # DRAFT: cobweb
 Project template for local development.
 
-TODO: batch
+TODO:
+- batch
+- doc
+- dockerfile
+- image version, variable
