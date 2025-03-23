@@ -2,8 +2,15 @@
 Project template for local development.
 
 TODO:
-- batch
 - doc
-- dockerfile
-- image version, variable
-- volume
+
+## DATABSE
+
+## SERVER
+
+## BATCH
+```
+docker compose exec master /bin/bash /opt/spark/work-dir/cobweb/bin/exec.sh ${APP_NAME}
+```
+
+## APP

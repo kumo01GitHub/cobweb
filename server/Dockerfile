@@ -7,6 +7,6 @@ RUN pip install -r requirements.txt
 ADD ./.env /code/
 ADD ./cobweb/ /code/cobweb/
 ADD ./manage.py /code/
-RUN python3 manage.py collectstatic
-RUN python3 manage.py migrate
-CMD ["python3" "manage.py" "createsuperuser" "--noinput"]
+RUN python3 manage.py collectstatic && \
+    python3 manage.py migrate && \
+    python3 manage.py createsuperuser --noinput
