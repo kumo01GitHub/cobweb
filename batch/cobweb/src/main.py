@@ -12,7 +12,9 @@ def main():
     load_dotenv(dotenv_path)
 
     spark = SparkSession.builder.appName(sys.argv[1]).getOrCreate()
-    print("run", spark.conf.get("spark.app.name"))
+    log4jLogger = spark._jvm.org.apache.log4j
+    logger = log4jLogger.LogManager.getLogger(__name__)
+    logger.info(f"run {spark.conf.get('spark.app.name')}")
 
     if spark.conf.get("spark.app.name") == "sample":
         sample.exec(spark)
