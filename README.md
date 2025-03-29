@@ -6,7 +6,7 @@ All-in-One project template for local development. You can startup with Docker C
 3. [Batch](#batch) - PySpark
 4. [Mobile App](#app) - React Native / Expo
 
-## DATABSE
+## DATABASE
 ### Overview
 [PostgreSQL](https://www.postgresql.org). Manage minimum setting, such as database and roll in init.sql. The other DMLs are managed with Django.
 
