@@ -1,6 +1,5 @@
 {
   "name": "cobweb",
-  "main": "src/main.tsx",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",

@@ -1,0 +1,2 @@
+# .env shoud be ignored.
+# **/*.env
