@@ -43,13 +43,13 @@ For debug:
 ```bash
 cd server
 # create static directory and collect static files.
-python3 manage.py collectstatic
+python manage.py collectstatic
 # migrate DDL.
-python3 manage.py migrate
+python manage.py migrate
 # create super user.
-python3 manage.py createsuperuser --noinput
+python manage.py createsuperuser --noinput
 # run server for debug.
-python3 manage.py runserver
+python manage.py runserver
 ```
 
 ### Setting
