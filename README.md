@@ -34,9 +34,22 @@ docker-compose up -d
 
 ### Quick Start
 Startup web application for admin on [http://localhost:8000/admin/](http://localhost:8000/admin/). Database must be setup before.
-```
+```bash
 cd server
 docker-compose up -d
+```
+
+For debug:
+```bash
+cd server
+# create static directory and collect static files.
+python3 manage.py collectstatic
+# migrate DDL.
+python3 manage.py migrate
+# create super user.
+python3 manage.py createsuperuser --noinput
+# run server for debug.
+python3 manage.py runserver
 ```
 
 ### Setting
