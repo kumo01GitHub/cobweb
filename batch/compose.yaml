@@ -1,0 +1,47 @@
+services:
+  master:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: 'cobwebbatch-master'
+    user: '0'
+    tty: true
+    ports:
+      - '8080:8080'
+      - '4040:4040'
+    command: 'bash -c "/opt/spark/sbin/start-master.sh && /bin/bash"'
+    volumes:
+      - ./cobweb:/opt/spark/work-dir/cobweb
+
+  worker1:
+    image: apache/spark-py:latest
+    container_name: 'cobwebbatch-worker1'
+    user: '0'
+    tty: true
+    ports:
+      - '8081:8081'
+    depends_on:
+      - 'master'
+    command: 'bash -c "/opt/spark/sbin/start-worker.sh spark://master:7077 -c 1 -m 2g && /bin/bash"'
+  
+  worker2:
+    image: apache/spark-py:latest
+    container_name: 'cobwebbatch-worker2'
+    user: '0'
+    tty: true
+    ports:
+      - '8082:8081'
+    depends_on:
+      - 'master'
+    command: 'bash -c "/opt/spark/sbin/start-worker.sh spark://master:7077 -c 1 -m 2g && /bin/bash"'
+
+  worker3:
+    image: apache/spark-py:latest
+    container_name: 'cobwebbatch-worker3'
+    user: '0'
+    tty: true
+    ports:
+      - '8083:8081'
+    depends_on:
+      - 'master'
+    command: 'bash -c "/opt/spark/sbin/start-worker.sh spark://master:7077 -c 1 -m 2g && /bin/bash"'
