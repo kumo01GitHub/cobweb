@@ -33,7 +33,7 @@ docker-compose up -d
 [Django](https://docs.djangoproject.com) and [Django REST framework](https://www.django-rest-framework.org). Application server and web application for admin.
 
 ### Quick Start
-Startup web application for admin on [http://localhost:8000](http://localhost:8000). Database must be setup before.
+Startup web application for admin on [http://localhost:8000/admin/](http://localhost:8000/admin/). Database must be setup before.
 ```
 cd server
 docker-compose up -d
