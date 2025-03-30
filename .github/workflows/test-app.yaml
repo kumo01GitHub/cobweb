@@ -1,0 +1,35 @@
+name: Test App
+on:
+  pull_request:
+    types: [synchronize, opened, reopened]
+  push:
+    branches:
+      - main
+env:
+  WORKING_DIRECTORY: app
+jobs:
+  test:
+    name: Run test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.6.3
+      - name: Setup Nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
+          cache: 'pnpm'
+          cache-dependency-path: ${{ env.WORKING_DIRECTORY }}/pnpm-lock.yaml
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+      - name: Test
+        run: pnpm run test
+      - name: Lint
+        run: pnpm run lint
