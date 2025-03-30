@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:${POSTGRES_VERSION}
+    image: postgres:${DOCKER_POSTGRES_VERSION}
     container_name: cobwebdb
     ports:
       - 5432:5432

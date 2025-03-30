@@ -3,6 +3,10 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+      args:
+        - sparkpy_version=${DOCKER_SPARKPY_VERSION}
+        - workdir=${DOCKER_WORKDIR}
+        - jdbc_postgres=${DOCKER_JDBC_POSTGRES}
     container_name: 'cobwebbatch-master'
     user: '0'
     tty: true
@@ -11,10 +15,10 @@ services:
       - '4040:4040'
     command: 'bash -c "/opt/spark/sbin/start-master.sh && /bin/bash"'
     volumes:
-      - ./cobweb:/opt/spark/work-dir/cobweb
+      - ./cobweb:${DOCKER_WORKDIR}/cobweb
 
   worker1:
-    image: apache/spark-py:latest
+    image: apache/spark-py:${DOCKER_SPARKPY_VERSION}
     container_name: 'cobwebbatch-worker1'
     user: '0'
     tty: true
@@ -25,7 +29,7 @@ services:
     command: 'bash -c "/opt/spark/sbin/start-worker.sh spark://master:7077 -c 1 -m 2g && /bin/bash"'
   
   worker2:
-    image: apache/spark-py:latest
+    image: apache/spark-py:${DOCKER_SPARKPY_VERSION}
     container_name: 'cobwebbatch-worker2'
     user: '0'
     tty: true
@@ -36,7 +40,7 @@ services:
     command: 'bash -c "/opt/spark/sbin/start-worker.sh spark://master:7077 -c 1 -m 2g && /bin/bash"'
 
   worker3:
-    image: apache/spark-py:latest
+    image: apache/spark-py:${DOCKER_SPARKPY_VERSION}
     container_name: 'cobwebbatch-worker3'
     user: '0'
     tty: true
