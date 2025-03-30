@@ -20,8 +20,8 @@ docker-compose up -d
 ### Setting
 | File | Propery | Descriptioon | Example |
 | ---- | ---- | ---- | ---- |
+| .env | `DOCKER_POSTGRES_VERSION` | [PostgreSQL docker image](https://hub.docker.com/_/postgres) version. | `latest` |
 | .env | `PROFILE` | Used for select init.sql. | `local` |
-| .env | `POSTGRES_VERSION` | PostgreSQL docker image version. | `15` |
 | .env | `POSTGRES_USER` | Superuser role for initialize database. | `postgres` |
 | .env | `POSTGRES_PASSWORD` | Superuser password for initialize database. | `password` |
 
@@ -55,6 +55,7 @@ python manage.py runserver
 ### Setting
 | File | Propery | Descriptioon | Example |
 | ---- | ---- | ---- | ---- |
+| .env | `DOCKER_PYTHON_VERSION` | [Python docker image](https://hub.docker.com/_/python) version. | `3` |
 | .env | `SECRET_KEY` | Secret key for Django. See [Django documentation](https://docs.djangoproject.com). | - |
 | .env | `DEBUG` | Debug. See [Django documentation](https://docs.djangoproject.com). | `False` |
 | .env | `ALLOWED_HOSTS` | Allowed host. Separate with comma. | `localhost,127.0.0.1,10.0.2.2` |
@@ -85,6 +86,9 @@ docker-compose exec master /bin/bash /opt/spark/work-dir/cobweb/bin/exec.sh ${AP
 ### Setting
 | File | Propery | Descriptioon | Example |
 | ---- | ---- | ---- | ---- |
+| .env | `DOCKER_SPARKPY_VERSION` | [PySpark docker image](https://hub.docker.com/r/apache/spark-py) version. | `latest` |
+| .env | `DOCKER_WORKDIR` | Docker working directory. | `/opt/spark/work-dir` |
+| .env | `DOCKER_JDBC_POSTGRES` | JDBC PostgreSQL jar file URL. Download in Dockerfile. | `https://jdbc.postgresql.org/download/postgresql-42.7.3.jar` |
 | .env | `SPARK_DATABASE_URL` | Database URL for JDBC. | `jdbc:postgresql://host.docker.internal:5432/cobweb` |
 | .env | `SPARK_DATABASE_USER` | Accessing database role. | `django` |
 | .env | `SPARK_DATABASE_PASSWORD` | Accessing database password. | `passwords` |
