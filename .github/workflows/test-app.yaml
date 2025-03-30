@@ -26,6 +26,7 @@ jobs:
         with:
           node-version-file: ${{ env.WORKING_DIRECTORY }}/package.json
           cache: 'pnpm'
+          cache-dependency-path: ${{ env.WORKING_DIRECTORY }}/pnpm-lock.yaml
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Test
