@@ -88,6 +88,7 @@ docker-compose exec master /bin/bash /opt/spark/work-dir/bin/exec.sh ${APP_NAME}
 | ---- | ---- | ---- | ---- |
 | .env | `DOCKER_SPARKPY_VERSION` | [PySpark docker image](https://hub.docker.com/r/apache/spark-py) version. | `latest` |
 | .env | `DOCKER_WORKDIR` | Docker working directory. | `/opt/spark/work-dir` |
+| .env | `DOCKER_PYTHON_VERSION` | Python version to install. | `3.10` |
 | .env | `DOCKER_JDBC_POSTGRES` | JDBC PostgreSQL jar file URL. Download in Dockerfile. | `https://jdbc.postgresql.org/download/postgresql-42.7.3.jar` |
 | .env | `SPARK_DATABASE_URL` | Database URL for JDBC. | `jdbc:postgresql://host.docker.internal:5432/cobweb` |
 | .env | `SPARK_DATABASE_USER` | Accessing database role. | `django` |

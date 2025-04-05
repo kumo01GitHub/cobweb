@@ -6,6 +6,7 @@ services:
       args:
         - sparkpy_version=${DOCKER_SPARKPY_VERSION}
         - workdir=${DOCKER_WORKDIR}
+        - python_version=${DOCKER_PYTHON_VERSION}
         - jdbc_postgres=${DOCKER_JDBC_POSTGRES}
     container_name: 'cobwebbatch-master'
     user: '0'
