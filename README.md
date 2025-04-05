@@ -80,7 +80,7 @@ Execute batch application. Batch status would be displayed on [http://localhost:
 ```bash
 cd batch
 docker-compose up -d
-docker-compose exec master /bin/bash /opt/spark/work-dir/cobweb/bin/exec.sh ${APP_NAME}
+docker-compose exec master /bin/bash /opt/spark/work-dir/bin/exec.sh ${APP_NAME}
 ```
 
 ### Setting

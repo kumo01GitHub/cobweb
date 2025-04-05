@@ -1,2 +1,5 @@
 # .env shoud be ignored.
 # **/*.env
+
+# cache
+.DS_Store
