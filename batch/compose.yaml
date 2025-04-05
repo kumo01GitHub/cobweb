@@ -16,6 +16,7 @@ services:
     command: 'bash -c "/opt/spark/sbin/start-master.sh && /bin/bash"'
     volumes:
       - ./cobweb:${DOCKER_WORKDIR}/cobweb
+      - ./bin:${DOCKER_WORKDIR}/bin
 
   worker1:
     image: apache/spark-py:${DOCKER_SPARKPY_VERSION}

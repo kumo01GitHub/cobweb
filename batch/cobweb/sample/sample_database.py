@@ -1,6 +1,8 @@
+"""Sample batch."""
 import os
 
-def exec(spark):
+def run(spark):
+    """Show django.auth_user."""
     jdbc = (
         spark.read.format("jdbc")
         .option("url", os.environ["SPARK_DATABASE_URL"])
