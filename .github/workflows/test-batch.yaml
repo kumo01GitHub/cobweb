@@ -15,7 +15,7 @@ jobs:
       run:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     steps:
-      - ame: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
       - name: Setup python
         uses: actions/setup-python@v5
