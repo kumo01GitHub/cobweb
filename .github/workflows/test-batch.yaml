@@ -27,8 +27,7 @@ jobs:
         run: python -m unittest
       - name: Lint
         env:
-          PYTHONPATH: ${{ github.workspace }}
+          PYTHONPATH: ${{ github.workspace }}/${{ env.WORKING_DIRECTORY }}
         run: |
-          echo $PYTHONPATH
           pip install pylint
           pylint cobweb
