@@ -1,5 +1,5 @@
 # cobweb
-All-in-One project template for local development. You can startup with Docker Comopse.
+All-in-One project template for local development. You can startup with Docker Compose.
 
 1. [Database](#database) - PostgreSQL
 2. [Server / Web Application for Admin](#server) - Django / Django REST framework
