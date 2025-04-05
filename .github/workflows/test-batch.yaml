@@ -26,6 +26,8 @@ jobs:
       - name: Test
         run: python -m unittest
       - name: Lint
+        env:
+          - PYTHONPATH: ${{ env.WORKING_DIRECTORY }}
         run: |
           pip install pylint
           pylint cobweb
