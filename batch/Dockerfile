@@ -9,8 +9,10 @@ COPY ./.env .
 ARG jdbc_postgres
 ARG python_version
 RUN apt-get -y update && \
-    apt-get -y install python${python_version} && \
-    pip install -U pip && \
+    apt-get -y --no-install-recommends install python${python_version} && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install --no-cache-dir -U pip && \
     pip install --no-cache-dir -r requirements.txt && \
     wget --progress=dot:giga -P ./jars ${jdbc_postgres}
 ENV PYTHONPATH ${workdir}
