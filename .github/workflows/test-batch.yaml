@@ -1,4 +1,4 @@
-name: unittest sample
+name: Test Batch
 on:
   pull_request:
     types: [synchronize, opened, reopened]
