@@ -25,3 +25,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Test
         run: python -m unittest
+      - name: Lint
+        run: |
+          pip install pylint
+          pylint cobweb
