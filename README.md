@@ -65,7 +65,6 @@ python manage.py runserver
 | .env | `DATABASE_HOST` | Database host. | `127.0.0.1` |
 | .env | `DATABASE_PORT` | Database port. | `5432` |
 | .env | `DJANGO_SUPERUSER_USERNAME` | First web application super user name. | `admin` |
-| .env | `DJANGO_SUPERUSER_EMAIL` | First web application super user email. | `admin@cobweb.com` |
 | .env | `DJANGO_SUPERUSER_PASSWORD` | First web application super user password. | `password` |
 
 ### Requirements for Developer
