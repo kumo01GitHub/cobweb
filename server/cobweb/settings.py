@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'custom_auth',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,12 @@ DATABASES = {
     }
 }
 
+# Customizing authentication in Django
+# https://docs.djangoproject.com/en/5.1/topics/auth/customizing/
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+AUTH_USER_MODEL = 'custom_auth.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
