@@ -41,7 +41,7 @@ docker-compose up -d
 
 For debug:
 ```bash
-cd server
+cd server/src/
 # create static directory and collect static files.
 python manage.py collectstatic
 # migrate DDL.
