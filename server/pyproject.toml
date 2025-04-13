@@ -13,17 +13,8 @@ dependencies = [
     "uWSGI"
 ]
 
-[tool.setuptools.dynamic]
-version = {attr = "src.cobweb.version"}
-
-[tool.setuptools_scm]
-write_to = "src/cobweb/_version.py"
-
 [project.optional-dependencies]
 dev = [
     "pylint",
     "pylint-django"
 ]
-
-[tool.setuptools]
-package-dir = {"" = "src"}

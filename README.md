@@ -41,15 +41,17 @@ docker-compose up -d
 
 For debug:
 ```bash
-cd server/src/
+cd server
+# install dependencies
+pip install .
 # create static directory and collect static files.
-python manage.py collectstatic
+python src/manage.py collectstatic
 # migrate DDL.
-python manage.py migrate
+python src/manage.py migrate
 # create super user.
-python manage.py createsuperuser --noinput
+python src/manage.py createsuperuser
 # run server for debug.
-python manage.py runserver
+python src/manage.py runserver
 ```
 
 ### Setting
@@ -86,7 +88,7 @@ docker-compose exec master /bin/bash /opt/spark/work-dir/bin/exec.sh ${APP_NAME}
 For debug:
 ```bash
 cd batch
-python -m cobweb ${APP_NAME}
+python -m src.cobweb ${APP_NAME}
 ```
 
 ### Setting

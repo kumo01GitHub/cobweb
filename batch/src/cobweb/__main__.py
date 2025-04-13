@@ -14,7 +14,7 @@ def main():
     env_filename = '.env'
     if getenv('PROFILE', '') != '':
         env_filename = f".env.{getenv('PROFILE')}"
-    dotenv_path = join(dirname(__file__), '..', env_filename)
+    dotenv_path = join(dirname(__file__), '../..', env_filename)
     load_dotenv(dotenv_path, override=True)
 
     spark = SparkSession.builder.appName(sys.argv[1]).getOrCreate()
