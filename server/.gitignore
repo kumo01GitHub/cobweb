@@ -1,7 +1,9 @@
-# cache
+# Cache
 **/__pycache__/**
+**/*.egg-info/**
+/build/
 
-# static files
+# Static files
 /static/
 
 # Database

@@ -1,0 +1,20 @@
+[project]
+name = "cobweb-server"
+version = "0.0.1"
+classifiers = [
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = "==3.13.*"
+dependencies = [
+    "Django",
+    "django-environ",
+    "djangorestframework",
+    "psycopg2",
+    "uWSGI"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pylint",
+    "pylint-django"
+]

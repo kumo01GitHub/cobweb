@@ -16,7 +16,7 @@ services:
       - '4040:4040'
     command: 'bash -c "/opt/spark/sbin/start-master.sh && /bin/bash"'
     volumes:
-      - ./cobweb:${DOCKER_WORKDIR}/cobweb
+      - ./src:${DOCKER_WORKDIR}/src
       - ./bin:${DOCKER_WORKDIR}/bin
 
   worker1:

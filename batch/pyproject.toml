@@ -1,0 +1,17 @@
+[project]
+name = "cobweb-batch"
+version = "0.0.1"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+]
+requires-python = "==3.10.*"
+dependencies = [
+    "py4j",
+    "pyspark",
+    "python-dotenv"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pylint"
+]
