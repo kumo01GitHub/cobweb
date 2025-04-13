@@ -1,5 +1,5 @@
-ARG sparkpy_version
-FROM apache/spark-py:${sparkpy_version:-latest}
+ARG sparkpy_version=latest
+FROM apache/spark-py:${sparkpy_version}
 ARG workdir
 USER root
 RUN mkdir -p ${workdir}

@@ -1,5 +1,5 @@
-ARG python_version
-FROM python:${python_version:-latest}
+ARG python_version=latest
+FROM python:${python_version}
 ENV PYTHONUNBUFFERED=1
 RUN mkdir /code
 WORKDIR /code
