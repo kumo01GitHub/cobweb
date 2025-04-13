@@ -1,0 +1,4 @@
+[default]
+load-plugins=pylint_django
+django-settings-module=cobweb.settings
+ignore=manage.py,migrations

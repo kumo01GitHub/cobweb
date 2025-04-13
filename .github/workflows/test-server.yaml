@@ -1,0 +1,35 @@
+name: Test Server
+on:
+  pull_request:
+    types: [synchronize, opened, reopened]
+  push:
+    branches:
+      - main
+env:
+  WORKING_DIRECTORY: server
+jobs:
+  test:
+    name: Run test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.2'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Test
+        run: python manage.py test
+        env: 
+          PROFILE: unittest
+      - name: Lint
+        env:
+          PYTHONPATH: ${{ github.workspace }}/${{ env.WORKING_DIRECTORY }}
+        run: |
+          pip install pylint pylint-django
+          pylint .

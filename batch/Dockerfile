@@ -1,4 +1,4 @@
-ARG sparkpy_version
+ARG sparkpy_version=latest
 FROM apache/spark-py:${sparkpy_version}
 ARG workdir
 USER root
@@ -15,4 +15,4 @@ RUN apt-get -y update && \
     pip install --no-cache-dir -U pip && \
     pip install --no-cache-dir -r requirements.txt && \
     wget --progress=dot:giga -P ./jars ${jdbc_postgres}
-ENV PYTHONPATH ${workdir}
+ENV PYTHONPATH=${workdir}
