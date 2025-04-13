@@ -42,7 +42,7 @@ docker-compose up -d
 For debug:
 ```bash
 cd server
-# install dependencies
+# install dependencies.
 pip install .
 # create static directory and collect static files.
 python src/manage.py collectstatic
@@ -88,9 +88,9 @@ docker-compose exec master /bin/bash /opt/spark/work-dir/bin/exec.sh ${APP_NAME}
 For debug:
 ```bash
 cd batch
-# install dependencies
+# install dependencies.
 pip install .
-# execute batch.
+# execute a batch.
 python -m src.cobweb ${APP_NAME}
 ```
 
