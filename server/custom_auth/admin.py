@@ -1,3 +1,4 @@
+"""Admin configuration for custom user model."""
 from django import forms
 from django.contrib import admin
 from django.contrib.auth.models import Group
@@ -9,20 +10,20 @@ from custom_auth.models import CustomUser
 
 
 class UserCreationForm(forms.ModelForm):
-    """A form for creating new users. Includes all the required
-    fields, plus a repeated password."""
+    """Create new user form."""
 
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
     password2 = forms.CharField(
         label="Password confirmation", widget=forms.PasswordInput
     )
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
+        """Metadata for UserCreationForm."""
         model = CustomUser
         fields = ["username"]
 
     def clean_password2(self):
-        # Check that the two password entries match
+        """Check that the two password entries match."""
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
         if password1 and password2 and password1 != password2:
@@ -30,7 +31,7 @@ class UserCreationForm(forms.ModelForm):
         return password2
 
     def save(self, commit=True):
-        # Save the provided password in hashed format
+        """Save the user with hashed password."""
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["password1"])
         if commit:
@@ -39,19 +40,19 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    """A form for updating users. Includes all the fields on
-    the user, but replaces the password field with admin's
-    disabled password hash display field.
-    """
+    """Update user form."""
 
     password = ReadOnlyPasswordHashField()
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
+        """Metadata for UserChangeForm."""
         model = CustomUser
         fields = ["username", "password", "is_active", "is_admin"]
 
 
 class UserAdmin(BaseUserAdmin):
+    """Admin user model."""
+
     # The forms to add and change user instances
     form = UserChangeForm
     add_form = UserCreationForm

@@ -59,6 +59,7 @@ python manage.py runserver
 | .env | `SECRET_KEY` | Secret key for Django. See [Django documentation](https://docs.djangoproject.com). | - |
 | .env | `DEBUG` | Debug. See [Django documentation](https://docs.djangoproject.com). | `False` |
 | .env | `ALLOWED_HOSTS` | Allowed host. Separate with comma. | `localhost,127.0.0.1,10.0.2.2` |
+| .env | `DATABASE_ENGINE` | Accessing database engine. | `django.db.backends.postgresql` |
 | .env | `DATABASE_NAME` | Accessing database name. | `cobweb` |
 | .env | `DATABASE_USER` | Accessing database role. | `django` |
 | .env | `DATABASE_PASSWORD` | Accessing database password. | `password` |

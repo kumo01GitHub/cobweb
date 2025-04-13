@@ -1,3 +1,8 @@
 # cache
 **/__pycache__/**
+
+# static files
 /static/
+
+# Database
+db.sqlite3

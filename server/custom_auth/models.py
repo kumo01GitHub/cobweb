@@ -1,13 +1,14 @@
+"""Custom user model."""
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.core.validators import validate_slug, MinLengthValidator
 from django.db import models
 
 
 class CustomUserManager(BaseUserManager):
+    """Custom user manager."""
+
     def create_user(self, username, password=None):
-        """
-        Creates and saves a User with the given username and password.
-        """
+        """Create user."""
         if not username:
             raise ValueError("Users must have a user name")
 
@@ -20,9 +21,7 @@ class CustomUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, username, password=None):
-        """
-        Creates and saves a superuser with the given username and password.
-        """
+        """Create superuser."""
         user = self.create_user(
             username=username,
             password=password,
@@ -33,8 +32,11 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser):
-    class Meta:
-       verbose_name = "user"
+    """Custom user model."""
+
+    class Meta:  # pylint: disable=too-few-public-methods
+        """Metadata for custom user model."""
+        verbose_name = "user"
 
     username = models.CharField(
         verbose_name = "user name",
@@ -55,12 +57,12 @@ class CustomUser(AbstractBaseUser):
     def __str__(self):
         return str(self.username)
 
-    def has_perm(self, perm, obj=None):
-        "Does the user have a specific permission?"
+    def has_perm(self, perm, obj=None):  # pylint: disable=unused-argument
+        """Does the user have a specific permission?"""
         # Simplest possible answer: Yes, always
         return True
 
-    def has_module_perms(self, app_label):
+    def has_module_perms(self, app_label):  # pylint: disable=unused-argument
         "Does the user have permissions to view the app `app_label`?"
         # Simplest possible answer: Yes, always
         return True

@@ -1,12 +1,11 @@
 ARG python_version
-FROM python:${python_version}
-ENV PYTHONUNBUFFERED 1
+FROM python:${python_version:-latest}
+ENV PYTHONUNBUFFERED=1
 RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./.env /code/
-# TODO: simplify copy apps
 COPY ./cobweb/ /code/cobweb/
 COPY ./custom_auth/ /code/custom_auth/
 COPY ./manage.py /code/
