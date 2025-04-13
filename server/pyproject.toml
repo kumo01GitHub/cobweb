@@ -1,0 +1,29 @@
+[project]
+name = "cobweb-server"
+version = "0.0.1"
+classifiers = [
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = "==3.13.*"
+dependencies = [
+    "Django",
+    "django-environ",
+    "djangorestframework",
+    "psycopg2",
+    "uWSGI"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "src.cobweb.version"}
+
+[tool.setuptools_scm]
+write_to = "src/cobweb/_version.py"
+
+[project.optional-dependencies]
+dev = [
+    "pylint",
+    "pylint-django"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
