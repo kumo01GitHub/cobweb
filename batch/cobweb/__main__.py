@@ -1,5 +1,6 @@
 """Execute PySpark batch."""
 import sys
+from os import getenv
 from os.path import join, dirname
 from dotenv import load_dotenv
 
@@ -10,8 +11,11 @@ from cobweb.sample import sample_database, sample_helloworld
 def main():
     """Execute provided app name batch."""
     load_dotenv(verbose=True)
-    dotenv_path = join(dirname(__file__), '../../.env')
-    load_dotenv(dotenv_path)
+    env_filename = '.env'
+    if getenv('PROFILE', '') != '':
+        env_filename = f".env.{getenv('PROFILE')}"
+    dotenv_path = join(dirname(__file__), '..', env_filename)
+    load_dotenv(dotenv_path, override=True)
 
     spark = SparkSession.builder.appName(sys.argv[1]).getOrCreate()
     log4j = spark._jvm.org.apache.log4j # pylint: disable=protected-access

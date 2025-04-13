@@ -83,6 +83,12 @@ docker-compose up -d
 docker-compose exec master /bin/bash /opt/spark/work-dir/bin/exec.sh ${APP_NAME}
 ```
 
+For debug:
+```bash
+cd batch
+python -m cobweb ${APP_NAME}
+```
+
 ### Setting
 | File | Propery | Descriptioon | Example |
 | ---- | ---- | ---- | ---- |

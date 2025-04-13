@@ -26,7 +26,7 @@ env = environ.Env(
 # Take environment variables from .env file
 ENV_FILENAME = '.env'
 if os.getenv('PROFILE', '') != '':
-    ENV_FILENAME = f'.env.{os.getenv('PROFILE')}'
+    ENV_FILENAME = f".env.{os.getenv('PROFILE')}"
 
 environ.Env.read_env(Path(BASE_DIR).joinpath(ENV_FILENAME))
 
