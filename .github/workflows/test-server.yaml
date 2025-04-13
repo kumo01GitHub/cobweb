@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Test
-        run: python manage.py test
+        run: python src/manage.py test src
         env: 
           PROFILE: unittest
       - name: Lint
@@ -32,4 +32,4 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}/${{ env.WORKING_DIRECTORY }}
         run: |
           pip install pylint pylint-django
-          pylint .
+          pylint src
