@@ -88,6 +88,9 @@ docker-compose exec master /bin/bash /opt/spark/work-dir/bin/exec.sh ${APP_NAME}
 For debug:
 ```bash
 cd batch
+# install dependencies
+pip install .
+# execute batch.
 python -m src.cobweb ${APP_NAME}
 ```
 
