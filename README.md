@@ -1,5 +1,5 @@
 # parfum
-All-in-One project template for local development. You can startup with Docker Compose.
+All-in-One project template. You can startup with [Docker Compose](https://docs.docker.com/compose/).
 
 1. [Database](#database) - PostgreSQL
 2. [Server / Web Application for Admin](#server) - Django / Django REST framework
