@@ -1,4 +1,4 @@
-# cobweb
+# parfum
 All-in-One project template for local development. You can startup with Docker Compose.
 
 1. [Database](#database) - PostgreSQL
@@ -62,7 +62,7 @@ python src/manage.py runserver
 | .env | `DEBUG` | Debug. See [Django documentation](https://docs.djangoproject.com). | `False` |
 | .env | `ALLOWED_HOSTS` | Allowed host. Separate with comma. | `localhost,127.0.0.1,10.0.2.2` |
 | .env | `DATABASE_ENGINE` | Accessing database engine. | `django.db.backends.postgresql` |
-| .env | `DATABASE_NAME` | Accessing database name. | `cobweb` |
+| .env | `DATABASE_NAME` | Accessing database name. | `parfum` |
 | .env | `DATABASE_USER` | Accessing database role. | `django` |
 | .env | `DATABASE_PASSWORD` | Accessing database password. | `password` |
 | .env | `DATABASE_HOST` | Database host. | `127.0.0.1` |
@@ -91,7 +91,7 @@ cd batch
 # install dependencies.
 pip install .
 # execute a batch.
-python -m src.cobweb ${APP_NAME}
+python -m src.parfum ${APP_NAME}
 ```
 
 ### Setting
@@ -101,7 +101,7 @@ python -m src.cobweb ${APP_NAME}
 | .env | `DOCKER_WORKDIR` | Docker working directory. | `/opt/spark/work-dir` |
 | .env | `DOCKER_PYTHON_VERSION` | Python version to install. | `3.10` |
 | .env | `DOCKER_JDBC_POSTGRES` | JDBC PostgreSQL jar file URL. Download in Dockerfile. | `https://jdbc.postgresql.org/download/postgresql-42.7.3.jar` |
-| .env | `SPARK_DATABASE_URL` | Database URL for JDBC. | `jdbc:postgresql://host.docker.internal:5432/cobweb` |
+| .env | `SPARK_DATABASE_URL` | Database URL for JDBC. | `jdbc:postgresql://host.docker.internal:5432/parfum` |
 | .env | `SPARK_DATABASE_USER` | Accessing database role. | `django` |
 | .env | `SPARK_DATABASE_PASSWORD` | Accessing database password. | `passwords` |
 

@@ -7,7 +7,7 @@ services:
         - python_version=${DOCKER_PYTHON_VERSION}
     # For Debug
     # command: python3 manage.py runserver 0.0.0.0:8000
-    command: uwsgi --http :8000 --wsgi-file src/cobweb/wsgi.py
-    container_name: cobwebserver
+    command: uwsgi --http :8000 --wsgi-file src/parfum/wsgi.py
+    container_name: parfumserver
     ports:
       - "8000:8000"

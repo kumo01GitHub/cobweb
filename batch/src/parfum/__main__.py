@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 from pyspark.sql import SparkSession
 
-from cobweb.sample import sample_database, sample_helloworld
+from parfum.sample import sample_database, sample_helloworld
 
 def main():
     """Execute provided app name batch."""

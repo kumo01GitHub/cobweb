@@ -1,5 +1,5 @@
 [project]
-name = "cobweb-batch"
+name = "parfum-batch"
 version = "0.0.1"
 classifiers = [
     "Programming Language :: Python :: 3.10",
