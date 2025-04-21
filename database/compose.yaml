@@ -1,7 +1,7 @@
 services:
   db:
     image: postgres:${DOCKER_POSTGRES_VERSION}
-    container_name: cobwebdb
+    container_name: parfumdb
     ports:
       - 5432:5432
     volumes:

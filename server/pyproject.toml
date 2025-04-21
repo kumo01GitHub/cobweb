@@ -1,5 +1,5 @@
 [project]
-name = "cobweb-server"
+name = "parfum-server"
 version = "0.0.1"
 classifiers = [
     "Programming Language :: Python :: 3.13",

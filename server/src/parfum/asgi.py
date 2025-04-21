@@ -1,5 +1,5 @@
 """
-ASGI config for cobweb project.
+ASGI config for parfum project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cobweb.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'parfum.settings')
 
 application = get_asgi_application()

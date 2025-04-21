@@ -8,7 +8,7 @@ services:
         - workdir=${DOCKER_WORKDIR}
         - python_version=${DOCKER_PYTHON_VERSION}
         - jdbc_postgres=${DOCKER_JDBC_POSTGRES}
-    container_name: 'cobwebbatch-master'
+    container_name: 'parfumbatch-master'
     user: '0'
     tty: true
     ports:
@@ -21,7 +21,7 @@ services:
 
   worker1:
     image: apache/spark-py:${DOCKER_SPARKPY_VERSION}
-    container_name: 'cobwebbatch-worker1'
+    container_name: 'parfumbatch-worker1'
     user: '0'
     tty: true
     ports:
@@ -32,7 +32,7 @@ services:
   
   worker2:
     image: apache/spark-py:${DOCKER_SPARKPY_VERSION}
-    container_name: 'cobwebbatch-worker2'
+    container_name: 'parfumbatch-worker2'
     user: '0'
     tty: true
     ports:
@@ -43,7 +43,7 @@ services:
 
   worker3:
     image: apache/spark-py:${DOCKER_SPARKPY_VERSION}
-    container_name: 'cobwebbatch-worker3'
+    container_name: 'parfumbatch-worker3'
     user: '0'
     tty: true
     ports:

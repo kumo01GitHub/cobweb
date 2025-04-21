@@ -2,7 +2,7 @@
 import unittest
 
 from pyspark.sql import SparkSession
-from cobweb.sample import sample_helloworld
+from parfum.sample import sample_helloworld
 
 class TestSample(unittest.TestCase):
     """Test Case: sample"""
